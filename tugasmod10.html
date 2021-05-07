@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Tugas-MODUL-10 - MIR Site</title>
+    <!--fav-icon-->
+    <link rel="shortcut icon" href="image/faviconsm.png" />
+
+    <script type="text/javascript">
+        function rubahnilai(nilai) {
+            if (nilai == true) {
+                nilai = "LAMPU ON";
+                document.getElementById("gbrlampu").src = "image/lampuhidup.png";
+            } else {
+                nilai = "LAMPU OFF";
+                document.getElementById("gbrlampu").src = "image/lampumati.png";
+            }
+            document.getElementById("statuslampu").innerHTML = nilai;
+        }
+    </script>
+
+    <style>
+        body {
+            background-image: none;
+        }
+
+        .form-check .form-check-input {
+            float: none;
+        }
+
+        /* tambahan */
+    </style>
+
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-primary"
+        style="background-image: url(image/waveup.png);background-size: cover;box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.13);border-radius: 0 0 30px 30px;">
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="image/logo.png" alt="logoku">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"
+                style="background-color: rgb(255, 255, 255); border-radius: 16px; padding: 5px;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" aria-current="page">
+                            <button type="button" class="btn btn-outline-primary "><i class="fas fa-home"></i>
+                                Home</button></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bio.html">
+                            <button type="button" class="btn btn-outline-primary "><i class="fas fa-id-card"></i> My
+                                Bio</button>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logsign.html">
+                            <button type="button" class="btn btn-outline-primary "><i class="fas fa-sign-in-alt"></i>
+                                Login / Sign Up</button>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown" style="padding-top: 8px;">
+                        <a class="btn btn-outline-primary dropdown-toggle" role="button" id="dropdownMenuLink"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-angle-double-down"></i> Other
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown"
+                            style="box-shadow: 1px 10px 10px 5px rgba(0, 0, 0, 0.15);">
+                            <li><a class="dropdown-item" href="tugasmod10.html">Tugas-MODUL-10</a></li>
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- konten -->
+
+    <div class="container overflow-visible">
+        <div class="row" style="padding-top: 100px;margin-top: calc(var(--bs-gutter-y) * -1);">
+            
+            <div class="text-center">
+                <p class="fw-bold fs-5 ">BERMAIN DENGAN DOM HTML</p>
+                <p class="fw-bold fs-5" style="margin-top: -16px;">untuk IoT dengan Penggunaan Condition Statement</p>
+            </div>
+
+            <!-- 1 -->
+
+            <div class="col-lg" style="padding-bottom: 15px;">
+                <div class="card text-center">
+                    <div class="card-header text-white bg-primary mb-3">
+                        Switch Lampu On/Off
+                    </div>
+                    <div class="card-body" style="padding-top: 0rem;">
+                        <div class="form-check form-switch text-start ">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault lampu"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Press to OFF and ON"
+                                style="height: 30px;width: 70px;" onchange="rubahnilai(this.checked)">
+                            <label class="form-check-label fw-bold fs-5" id="statuslampu" for="flexSwitchCheckDefault"
+                                style="margin-top: 4px;"> LAMPU OFF</label>
+                        </div>
+                        <img src="image/lampumati.png" alt="malam" id="gbrlampu" style="margin-top: 20px;width: 50%;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2 -->
+
+            <div class="col-lg" style="padding-bottom: 15px;">
+                <div class="card text-center">
+                    <div class="card-header text-white bg-danger  mb-3">
+                        KECEPATAN KIPAS
+                    </div>
+                    <div class="card-body" style="padding-top: 0rem;">
+
+                        <label for="customRange2" class="form-label">Kecepatan kipas posisi <span
+                                id="demo">0</span></label>
+
+                        <input type="range" min="0" max="5" value="0" class="slider form-range" id="myRange"
+                            data-bs-toggle="tooltip" data-bs-placement="bottom" title="Slide to change speed">
+
+
+                        <img src="image/kipasanginaw.png" alt="kipasgif" id="gbrkipas"
+                            style="margin-top: 20px;width: 75%;">
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                var slider = document.getElementById("myRange");
+                var output = document.getElementById("demo");
+                output.innerHTML = slider.value;
+
+                slider.oninput = function () {
+                    output.innerHTML = this.value;
+                    switch (parseInt(this.value)) {
+                        case 0:
+                            document.getElementById("gbrkipas").src = "image/kipasanginaw.png";
+                            break;
+                        case 1:
+                            document.getElementById("gbrkipas").src = "image/kipaskec1.gif";
+                            break;
+                        case 2:
+                            document.getElementById("gbrkipas").src = "image/kipaskec2.gif";
+                            break;
+                        case 3:
+                            document.getElementById("gbrkipas").src = "image/kipaskec3.gif";
+                            break;
+                        case 4:
+                            document.getElementById("gbrkipas").src = "image/kipaskec4.gif";
+                            break;
+                        case 5:
+                            document.getElementById("gbrkipas").src = "image/kipaskec5.gif";
+                            break;
+
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
+
+    <hr>
+    <!-- footer-->
+    <footer>
+
+        <!-- SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="margin-top: -76px;">
+            <path fill="#0099ff" fill-opacity="1"
+                d="M0,64L40,85.3C80,107,160,149,240,176C320,203,400,213,480,197.3C560,181,640,139,720,122.7C800,107,880,117,960,149.3C1040,181,1120,235,1200,250.7C1280,267,1360,245,1400,234.7L1440,224L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+
+        <p class="text-center" style="background-color: #0099ff;color: #fff;margin-bottom: 0rem;margin-top: -2px;"><i
+                class="far fa-compass fa-spin"></i> <b><u>M I R Site.</i></u></b> <i class="fas fa-fan fa-spin"></i></p>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
+    </script>
+    <script>
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
+
+</body>
+
+</html>
